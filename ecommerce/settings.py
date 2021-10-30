@@ -50,7 +50,7 @@ INSTALLED_APPS = [
     'users',
     'crispy_forms',
     'app',
-    'processdata',
+    # 'processdata',
     'django.contrib.humanize',
     'polls',
     'personal',

@@ -10,7 +10,7 @@ from django.core.paginator import Paginator
 from django.contrib.auth import login
 # from decorators import customer_required
 from django.contrib.auth.decorators import login_required
-import users.face_detect as face_detect
+# import users.face_detect as face_detect
 from users.models import Profile,User
 from orders.models import Order
 from django.views.generic import (CreateView, DeleteView, DetailView, ListView,
@@ -21,7 +21,7 @@ from users.forms import SellerSignUpForm
 import base64
 from PIL import Image
 from io import BytesIO
-import cv2
+# import cv2
 import numpy as np
 from django.core.files import File
 from django.core.files.base import ContentFile
