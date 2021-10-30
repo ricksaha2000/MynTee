@@ -22,32 +22,96 @@
 
 	</ul>
   </div>
-  <div class="col-md-4 col-lg-8 mt-3">
-	  
-		{% for value in wishlists %}
-			        <div class="card card-block text-{1:center|right} mt-3">
+  <!-- <div class="col-md-4 col-lg-8 mt-3"> -->
+	  <!-- <div class="row">
+	<h6 class="subheading">Title</h6>
+	</div> -->
+		{% for value in wishlists|slice:'3' %}
+
+
+
+		<div class="col-md-6 col-lg-3 ftco-animate">
+			<br/><br/>
+
+			<div class="product">
+			
+				<img class="img-fluid" src="{{ value.photo.url }}" alt="Colorlib Template">
+					<div class="overlay"></div>
+				</a>
+				<div class="text py-3 pb-4 px-3 text-center">
+					<h3>
+					<a >{{ value.title }}</a></h3>
+					<div class="d-flex">
+						<div class="pricing">
+							<p class="price"><span>&#8377;{{ value.price }}.00</span></p>
+						</div>
+					</div>
+					<div class="bottom-area d-flex px-3">
+						<div class="m-auto d-flex">
+						
+							<a href="#" class="buy-now d-flex justify-content-center align-items-center mx-1">
+								<span><i class="ion-ios-cart"></i></span>
+							</a>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+			        <!-- <div class="card card-block text-{1:center|right} mt-3">
 			        	<img align="center" src="{{value.photo.url}}" width="150px" alt="">
 						<h4 class="card-title text-center">{{value.title}}</h4>
-						<p class="card-text lead">{{value.summary}}</p>
 
-					</div>
-					<div class="clearfix">
+					</div> -->
+					<!-- <div class="clearfix">
 						
 						<a href="{% url "pages:product_by_slug" value.productid %}" class="btn btn-primary btn-xs float-left">Read More</a>
 
 					<a href="{% url "wishlists:delete_wishlist" value.productid %}" class="btn btn-primary btn-xs float-right">Delete</a><br>
-					</div>
+					</div> -->
 		{% endfor %}
 		<br>
 		<br>
 		{% if wishlists %}
-		  <a href="{% url "wishlists:clear_wishlists" %}" class="btn btn-danger " style="float: right;">Clear wishlists</a><br>
+		  <!-- <a href="{% url "wishlists:clear_wishlists" %}" class="btn btn-danger " style="float: right;">Clear wishlists</a><br> -->
 		  {% else %}
-		  <h6>You Wishlist is Empty!!!!</h6>
+		  <!-- <h6>You Wishlist is Empty!!!!</h6> -->
+		  <!-- {% for product in products %} -->
+		  <div class="col-md-6 col-lg-3 ftco-animate">
+			  <div class="product">
+				  <a href="{% url "pages:prod_detail" product.title %}" class="img-prod">
+				  <img class="img-fluid" src="{{ product.photo.url }}" alt="Colorlib Template">
+					  <div class="overlay"></div>
+				  </a>
+				  <div class="text py-3 pb-4 px-3 text-center">
+					  <h3>
+					  <a >{{ product.title }}</a></h3>
+					  <!-- <div class="d-flex">
+						  <div class="pricing">
+							  <p class="price"><span>&#x20B9; {{ product.price }}.00</span></p>
+						  </div>
+					  </div> -->
+					  <div class="bottom-area d-flex px-3">
+						  <div class="m-auto d-flex">
+							  <a href="{% url "pages:prod_detail" product.title%}" class="add-to-cart d-flex justify-content-center align-items-center text-center">
+								  <span><i class="ion-ios-menu"></i></span>
+							  </a>
+							  <!-- <a href="#" class="buy-now d-flex justify-content-center align-items-center mx-1">
+								  <span><i class="ion-ios-cart"></i></span>
+							  </a> -->
+							  <a href="{% url "wishlists:add_wishlist" product.productid %}"	 class="heart d-flex justify-content-center align-items-center ">
+								  <span><i class="ion-ios-heart"></i></span>
+							  </a>
+						  </div>
+					  </div>
+				  </div>
+			  </div>
+		  </div>
+	<!-- {% endfor %} -->
 		  {% endif %}
 
 
-  </div>
+  <!-- </div> -->
 </div>
 
 

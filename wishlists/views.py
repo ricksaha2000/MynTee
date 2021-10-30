@@ -5,7 +5,7 @@ from django.core.paginator import Paginator
 from django.contrib import messages
 from django.conf import settings
 from django.contrib.auth.decorators import login_required
-
+import random
 from products.models import Product
 from categories.models import Category
 from wishlists.models import WishList
@@ -25,17 +25,18 @@ def add_wishlist(request,product_productid):
 
 @login_required(login_url="/users/login")
 def my_wishlists(request):
-	products = WishList.objects.filter(user_id=request.user.id).select_related('product')
-	category = Category.objects.all()
+	products = Product.objects.all()
+	
+	# products = list(Product.objects.all())
+	# products = random.sample(products, 1)
 	wishlists = []
 	for i in products:
 		i = str(i)
 		product = Product.objects.get(pk=i)
 		wishlists.append(product)
 	context = {
-			'title' : 'My WishList',
+			'title' : 'Recommendations',
 			'wishlists' : wishlists,
-			'category' : category
 	}
 	return render(request,'wishlists/all_wishlists.html',context)
 
