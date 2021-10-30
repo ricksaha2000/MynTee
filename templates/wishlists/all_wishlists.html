@@ -12,7 +12,7 @@
 	<br>
   <div class="col-md-4 col-lg-4">
 	  <br>
-	  <h5>View Products</h5>
+	  <h5>View Recommendations</h5>
 	<ul class="list-group">
 		<li class="list-group-item"><a href="/shop">All Products</a></li>
 		{% for cat in category %}
@@ -34,7 +34,7 @@
 			<br/><br/>
 
 			<div class="product">
-			
+			<a href="{% url "pages:product_by_slug" value.productid %}">
 				<img class="img-fluid" src="{{ value.photo.url }}" alt="Colorlib Template">
 					<div class="overlay"></div>
 				</a>

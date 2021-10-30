@@ -26,9 +26,10 @@ def add_wishlist(request,product_productid):
 @login_required(login_url="/users/login")
 def my_wishlists(request):
 	products = Product.objects.all()
-	
 	# products = list(Product.objects.all())
 	# products = random.sample(products, 1)
+	category = Category.objects.all()
+
 	wishlists = []
 	for i in products:
 		i = str(i)
@@ -37,6 +38,7 @@ def my_wishlists(request):
 	context = {
 			'title' : 'Recommendations',
 			'wishlists' : wishlists,
+			'category':category
 	}
 	return render(request,'wishlists/all_wishlists.html',context)
 
