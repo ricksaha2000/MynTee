@@ -36,3 +36,11 @@ class Seller(models.Model):
 
 	def __str__(self):
 		return self.user.username
+
+class UserUploads(models.Model):
+	user = models.OneToOneField(User , on_delete=models.CASCADE)
+	photo = models.ImageField(upload_to='users/')
+	title = models.CharField(max_length=200)
+	
+	def __str__(self):
+		return self.user.username

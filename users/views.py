@@ -11,7 +11,7 @@ from django.contrib.auth import login
 # from decorators import customer_required
 from django.contrib.auth.decorators import login_required
 # import users.face_detect as face_detect
-from users.models import Profile,User
+from users.models import Profile,User,UserUploads
 from orders.models import Order
 from django.views.generic import (CreateView, DeleteView, DetailView, ListView,
                                   UpdateView)
@@ -175,31 +175,43 @@ def dashboard_seller(request):
 
 @login_required(login_url="/users/login")
 def profile_customer(request,user_id):
+	print("HATT GANDU")
 	if request.method == 'POST':
 		try:
 			image = request.FILES['image']
 		except MultiValueDictKeyError:
 			image = False
-		username = request.POST['username']
-		email = request.POST['email']
+		title = request.POST['username']
 		user = get_object_or_404(User,pk=user_id)
-		profile = Profile.objects.get(user=user_id)
+		
+		
 		if image == False:
-			user.username = username
-			user.email = email
-			user.save()
-			messages.success(request,'Profile Updated SuccessFully')
 			return redirect('users:profile',user_id = user_id)
 		else:
-			user.username = username
-			user.email = email
-			profile.image = image
+			cat = UserUploads.objects.create(
+						user = user,
+						title=title,
+						photo=image
+					)
 
-			user.save()
-			profile.save()
-			messages.success(request,'Profile Updated SuccessFully')
+			cat.save()
+			print("UserUploads")
+			messages.success(request,'Image Added to Profile SuccessFully')
 			return redirect('users:profile',user_id = user_id)
 	else:
+		print("CHAL BSDK")
+		if(request.user.is_customer):
+			print("CHAL MA KI CHU")
+			user_id = request.user.id
+			products = UserUploads.objects.filter(user=user_id)
+
+			context = {
+
+				# 'title':request.user.name,
+				'products':products,
+			}
+			return render(request ,'users/profile.html' , context)
+
 		return render(request,'users/profile.html')
 
 @login_required(login_url="/users/login")
