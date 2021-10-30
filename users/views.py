@@ -181,7 +181,7 @@ def profile_customer(request,user_id):
 			image = request.FILES['image']
 		except MultiValueDictKeyError:
 			image = False
-		title = request.POST['username']
+		title = request.POST['title']
 		user = get_object_or_404(User,pk=user_id)
 		
 		

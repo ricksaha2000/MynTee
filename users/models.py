@@ -2,8 +2,10 @@ from django.db import models
 # from django.contrib.auth.models import User
 from PIL import Image
 from django.contrib.auth.models import AbstractUser
+import random
 
-
+def random_string():
+    return str(random.randint(10000, 99999))
 # Create your models here.
 class User(AbstractUser):
     is_customer = models.BooleanField(default=False)
@@ -38,8 +40,9 @@ class Seller(models.Model):
 		return self.user.username
 
 class UserUploads(models.Model):
-	user = models.OneToOneField(User , on_delete=models.CASCADE)
-	photo = models.ImageField(upload_to='users/')
+	upload_id = models.AutoField(primary_key=True, default=random_string)
+	user = models.ForeignKey(User,on_delete=models.CASCADE)
+	photo = models.ImageField(upload_to='images/')
 	title = models.CharField(max_length=200)
 	
 	def __str__(self):
