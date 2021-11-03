@@ -1,0 +1,152 @@
+{% extends 'base.html' %} 
+{% load mathfilters %} 
+{% load static %} 
+{% block content %}
+<div
+	class="hero-wrap hero-bread"
+	style="
+		background-image: url(https://i.pinimg.com/originals/93/db/b4/93dbb416b9ed038550c596f871cb0177.jpg);
+	"
+>
+	<div class="container">
+		<div
+			class="
+				row
+				no-gutters
+				slider-text
+				align-items-center
+				justify-content-center
+			"
+		>
+			<div class="col-md-9 ftco-animate text-center">
+				<p class="breadcrumbs">
+					<span class="mr-2">
+						{% comment %} <a href="{% url 'home' %}">Home</a></span
+					>
+					<span class="mr-2">
+						{% endcomment %} <a href="index.html">Product</a></span
+					>
+					<span>Product Single</span>
+				</p>
+				<h1 class="mb-0 bread">Product Single</h1>
+			</div>
+		</div>
+	</div>
+</div>
+
+<section class="ftco-section">
+	<div class="container" id="haha">
+		<div class="row">
+			<div class="col-lg-6 mb-5 ftco-animate">
+				<a href="{{ product.photo.url }}" class="image-popup"
+					><img
+						src="{{ product.photo.url }}"
+						class="img-fluid"
+						alt="Colorlib Template"
+				/></a>
+				<h6 style="text-align:left;margin-left:78px" ><b>{{product.title}}</b></h6>
+				
+			</div>
+			<div class="col-lg-6 product-details pl-md-5 ftco-animate">
+				<form id="myform" action="{% url "pages:tryon" product.productid%}" method="POST" enctype="multipart/form-data" novalidate="novalidate">
+					{% csrf_token %}
+
+				<h6 class="subheading" style="margin-bottom:35px"><b>Provide your Picture for a <b>VIRTUAL TRYON</b></b></h6>
+										<input type="file" name="image" class="fomr-control">
+										<div class="form-group" style="width: fit-content;">
+											<input type="submit" style="margin-top:35px;" value="VIRTUAL TRYON"  class="btn btn-primary">
+										</div>	
+									</form>
+					{% comment %} {% csrf_token %} {% endcomment %}
+					
+			</div>
+		</div>
+		{%if img%}
+				<!-- <h6>YOU LOOK AWESOME!</h6> style="margin-left:198px"  -->
+				<div style="overflow: hidden; display: flex; justify-content:space-around;">
+					<div class="col-lg-6 mb-5 ftco-animate">
+						<div style="display:inline-block"> 
+
+							<h6 ><b>YOUR UPLOADED IMAGE!</b></h6>
+
+				<img
+				src="data:image/png;base64,{{img1}}"
+				class="img-fluid"
+				alt="Colorlib Template"
+				style="margin-left:8px"
+		/>
+		</div>
+		<div style="display:inline-block;margin-left:80px"> 
+			<h6 style="margin-left:4px"><b>YOU LOOK AWESOME!</b></h6>
+
+
+			<img
+			src="data:image/png;base64,{{img}}"
+			class="img-fluid"
+			alt="Colorlib Template"
+	/></div>
+		
+</div>
+</div>
+
+		{%endif%}
+	</div>
+</section>
+
+<div id="hehe">
+	
+</div>
+
+<div class="container" style="z-index: 100">
+	<div class="widget">
+		<div class="chat_header">
+			<!--Add the name of the bot here -->
+			<span style="color: white; margin-left: 5px">MedBot 😃</span>
+			<span
+				style="
+					color: white;
+					margin-right: 5px;
+					float: right;
+					margin-top: 5px;
+				"
+				id="close"
+			>
+				<i class="material-icons">close</i>
+			</span>
+		</div>
+		<!--Chatbot contents goes here -->
+		<div class="chats" id="chats">
+			<div class="clearfix"></div>
+		</div>
+		<!--user typing indicator -->
+		<div class="keypad">
+			<input
+				type="text"
+				id="keypad"
+				class="usrInput browser-default"
+				placeholder="Type a message..."
+				autocomplete="off"
+			/>
+		</div>
+	</div>
+	<!--bot widget -->
+	<div class="profile_div" id="profile_div">
+		<img class="imgProfile" src="{% static 'img/botAvatar.png' %}" />
+	</div>
+</div>
+
+
+
+<script>
+	$(document).ready(function () {
+		var star_rating_width = $(".fill-ratings span").width();
+		$(".star-ratings").width(star_rating_width);
+	});
+</script>
+
+<script></script>
+
+{% endblock %} 
+{% block title %}
+ {{title}}
+  {% endblock title %}

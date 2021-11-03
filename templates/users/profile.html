@@ -9,6 +9,7 @@
 
 <section id="home-section" class="hero">
     <div class="home-slider owl-carousel">
+      {% if product%}
         {% for product in products %}
       <div class="slider-item" style="background-image: url('{{product.photo.url}}')">;">
         <div class="overlay"></div>
@@ -26,6 +27,7 @@
       </div>
   
       {%endfor%}
+      {%endif%}
     </div>
   </section>
 
@@ -41,7 +43,7 @@
         <div class="col-md-6 float-left">
 
            <div class="form-group">
-                <h6 class="subheading">Title</h6>
+                <h6 class="subheading"><b>Title</b></h6>
                 <input type="text" name="title" class="form-control" value="" >
             </div>
 
@@ -49,10 +51,10 @@
         </div>
 
         <div class="col-md-12 float-right" style="margin-bottom:50px">
-            <div>
+            <!-- <div>
                 <img src="{{user.profile.image.url}}" class="img-thumbnail" alt="">
-            </div>
-            <h6 class="subheading">Change Profile Picture</h6>
+            </div> -->
+            <h6 class="subheading"><b>Add another Picture to your collection</b></h6>
             <input type="file" name="image" class="fomr-control">
         </div>
 

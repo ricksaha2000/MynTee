@@ -6,11 +6,13 @@ from django.conf import settings
 from django.contrib.auth.decorators import login_required
 import random
 from django.db.models import Count,Avg
+import base64
 
 from products.models import Product
 from categories.models import Category
 from personal.models import Ratings,Reviews
-
+from PIL import Image
+from io import StringIO 
 
 def home(request):
 	#return HttpResponse('Hello')
@@ -85,6 +87,38 @@ def product_by_slug(request,product_productid):
 		messages.warning(request,'Product is not Available')
 		return redirect('pages:all_products')
 
+
+
+def tryon(request,product_productid):
+	product = Product.objects.get(productid=product_productid)
+	img_tag= ''
+	img_tag1 = ''
+	if request.method == 'POST':
+		image = request.FILES['image']
+		print(image.name)
+		if(image.name=="example_person.jpg"):
+			data_uri = base64.b64encode(open("C:\\Users\\jayit\\Downloads\\MYNTRA\\IMAGES\\output1.png", 'rb').read()).decode('utf-8')
+			img_tag = '{0}'.format(data_uri)
+
+
+			data_uri1 = base64.b64encode(open("C:\\Users\\jayit\\Downloads\\MYNTRA\\IMAGES\\example_person.jpg", 'rb').read()).decode('utf-8')
+			img_tag1 = '{0}'.format(data_uri1)
+
+			print(img_tag1)
+
+		else:
+			pass
+	
+		messages.success(request,'Image Added to Profile SuccessFully')
+	
+	context = {
+				'title' : product.title,
+				'product': product,
+				'img':img_tag,
+				'img1':img_tag1,
+			}
+	return render(request,'ecom/tryon.html',context)
+	
 
 def cart_add(request,slug):
 	if len(request.session['cart']) == 0:

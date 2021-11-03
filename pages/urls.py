@@ -15,6 +15,8 @@ urlpatterns = [
     path('search/' , search_titles ,name = 'search' ),
     path('my-ajax-test/', myajaxtestview, name='myajaxtestview'),
     path('my-ajax-test-text/', myajaxtestviewtext, name='myajaxtestviewtext'),
+    path('tryon/<int:product_productid>/', views.tryon, name='tryon'),
+
 
 
 

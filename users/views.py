@@ -175,7 +175,6 @@ def dashboard_seller(request):
 
 @login_required(login_url="/users/login")
 def profile_customer(request,user_id):
-	print("HATT GANDU")
 	if request.method == 'POST':
 		try:
 			image = request.FILES['image']
@@ -199,9 +198,7 @@ def profile_customer(request,user_id):
 			messages.success(request,'Image Added to Profile SuccessFully')
 			return redirect('users:profile',user_id = user_id)
 	else:
-		print("CHAL BSDK")
 		if(request.user.is_customer):
-			print("CHAL MA KI CHU")
 			user_id = request.user.id
 			products = UserUploads.objects.filter(user=user_id)
 
