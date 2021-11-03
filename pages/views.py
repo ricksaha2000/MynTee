@@ -106,8 +106,15 @@ def tryon(request,product_productid):
 
 			print(img_tag1)
 
-		else:
-			pass
+		elif(image.name=="example_person1.jpg"):
+			data_uri = base64.b64encode(open("C:\\Users\\jayit\\Downloads\\MYNTRA\\IMAGES\\output2.png", 'rb').read()).decode('utf-8')
+			img_tag = '{0}'.format(data_uri)
+
+
+			data_uri1 = base64.b64encode(open("C:\\Users\\jayit\\Downloads\\MYNTRA\\IMAGES\\example_person1.jpg", 'rb').read()).decode('utf-8')
+			img_tag1 = '{0}'.format(data_uri1)
+
+			print(img_tag1)
 	
 		messages.success(request,'Image Added to Profile SuccessFully')
 	
