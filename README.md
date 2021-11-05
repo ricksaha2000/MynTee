@@ -1,4 +1,4 @@
-# Groc4All - An E-Commerce Website
+# MynTee - An E-Commerce Website
 
 ## Features
 	1. Full Authentication via face-recognition
