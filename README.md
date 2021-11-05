@@ -92,8 +92,7 @@ We aim to simplify the process of delivery and ordering system packed in a singl
 <img width="994" alt="Screenshot 2021-11-06 at 12 25 18 AM" src="https://user-images.githubusercontent.com/53152779/140563952-deec3bcc-189f-4487-83df-1971d98d56dc.png">
 <img width="994" alt="Screenshot 2021-11-06 at 12 26 54 AM" src="https://user-images.githubusercontent.com/53152779/140564282-0a2afb0e-1669-4f03-968e-6f2c361623ad.png">
 <img width="994" alt="Screenshot 2021-11-06 at 12 27 19 AM" src="https://user-images.githubusercontent.com/53152779/140564291-3142f452-bfc4-4b93-a502-917b3d25ab0a.png">
-<img width="994" alt="Screenshot 2021-11-06 at 12 27 25 AM" src="https://user-images.githubusercontent.com/53152779/140564300-6e84b3a5-8a86-4f4d-a0e5-88c6b89776
-a6.png">
+<img width="994" alt="Screenshot 2021-11-06 at 12 27 25 AM" src="https://user-images.githubusercontent.com/53152779/140564300-6e84b3a5-8a86-4f4d-a0e5-88c6b89776a6.png">
 <img width="994" alt="Screenshot 2021-11-06 at 12 27 59 AM" src="https://user-images.githubusercontent.com/53152779/140564306-2b63e719-f924-42c3-8bd6-233a1796795a.png">
 <img width="994" alt="Screenshot 2021-11-06 at 12 28 32 AM" src="https://user-images.githubusercontent.com/53152779/140564366-6e73e358-6ce1-4f47-ad41-1aab0df262af.png">
 <img width="994" alt="Screenshot 2021-11-06 at 12 28 54 AM" src="https://user-images.githubusercontent.com/53152779/140564379-7bef4bc0-c451-4f51-b252-84e96192b09e.png">
