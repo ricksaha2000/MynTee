@@ -106,6 +106,7 @@ We aim to simplify the process of delivery and ordering system packed in a singl
 - Integration of local languages to our product and expand our products to several more local food distributors for better user experience and wider reach out.
 - Make our chatbot robust to handle more complex enquiry or product detail enquiry
 - Include a voice based assitant to navigate the entire application
+- Have a recommender to recommend matching accessories, footwear or others for user's uploaded dress selection
 
 ## Demo
 https://drive.google.com/drive/folders/1sSD47mzRlf712m4BxKz7xcsJ_rgaUBfg?usp=sharing
