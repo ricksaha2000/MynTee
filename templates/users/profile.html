@@ -9,7 +9,7 @@
 
 <section id="home-section" class="hero">
     <div class="home-slider owl-carousel">
-      {% if product%}
+      {% if products%}
         {% for product in products %}
       <div class="slider-item" style="background-image: url('{{product.photo.url}}')">;">
         <div class="overlay"></div>
@@ -17,7 +17,7 @@
           <div class="row slider-text justify-content-center align-items-center" data-scrollax-parent="true">
   
             <div class="col-md-12 ftco-animate text-center">
-              <h1 class="mb-2" style="color:black">{{product.title}}</h1>
+              <h1 class="mb-2" style="color:white">{{product.title}}</h1>
               <h2 class="subheading mb-4">All about fashion</h2>
               <p><a href="#" class="btn btn-primary">View Details</a></p>
             </div>
