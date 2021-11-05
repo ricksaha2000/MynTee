@@ -75,6 +75,8 @@ We aim to simplify the process of delivery and ordering system packed in a singl
 	17.Genetic algorithm for ranking uses location, reviews, availability and price
 	18.Auto cart addition via voice based chatbot
 	19.Product quantity and price enquiry via the voice based chatbot
+	20.Virtual tryon assistant
+	21.Personalized wardrobe style recommender
 
 
 ## Tech stack
